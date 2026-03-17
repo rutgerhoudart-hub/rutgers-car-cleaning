@@ -1,3 +1,5 @@
+"use client";
+
 import Hero from "./components/Hero";
 import BeforeAfter from "./components/BeforeAfter";
 import Booking from "./components/Booking";
@@ -8,7 +10,14 @@ import Shop from "./components/Shop";
 
 export default function CarCleaningWebsite() {
   return (
-    <div>
+    <div className="bg-black text-white min-h-screen">
+
+      {/* TEST BLOCK */}
+      <div className="bg-red-500 text-white p-10 text-center">
+        TEST
+      </div>
+
+      {/* WEBSITE */}
       <Hero />
       <BeforeAfter />
       <Booking />
@@ -16,6 +25,7 @@ export default function CarCleaningWebsite() {
       <Shop />
       <Reviews />
       <Chatbot />
+
     </div>
   );
 }
