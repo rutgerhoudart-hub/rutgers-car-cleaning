@@ -1,3 +1,13 @@
+<div className="absolute top-6 left-6 flex items-center gap-3">
+
+  <img src="/logo.svg" className="h-10" />
+
+  <span className="text-white font-semibold">
+    Rutger's Car Cleaning
+  </span>
+
+</div>
+
 export default function Hero() {
     return (
         <section className="h-screen flex flex-col justify-center items-center text-center bg-black">
