@@ -7,6 +7,8 @@ export default function Home() {
   const slides = [
     { before: "/before1.jpg", after: "/after1.jpg" },
     { before: "/before2.jpg", after: "/after2.jpg" },
+    { before: "/before3.jpg", after: "/after3.jpg" },
+    { before: "/before4.jpg", after: "/after4.jpg" },
   ];
 
   const [slide, setSlide] = useState(0);
@@ -17,9 +19,11 @@ export default function Home() {
       {/* HEADER */}
       <header className="flex justify-between items-center px-6 py-4 border-b border-white/10 backdrop-blur-md">
         <div className="flex items-center gap-3">
-          <img src="/logo-rutger.svg"
-          className="h-3 md:h-4 w-auto object-contain"
-          />
+         <img
+          src="/logo-rutger.svg"
+          className="h-2 md:h-3 w-auto object-contain"
+         alt="Rutger's Premium Car Cleaning logo"
+         />
           <span className="font-bold">Rutger's Premium Car Cleaning</span>
         </div>
         <a href="https://wa.me/32498350160">
@@ -29,7 +33,7 @@ export default function Home() {
 
       {/* HERO */}
       <section className="text-center py-20">
-       <h1 className="text-5xl md:text-6xl font-bold mb-4">Premium Car Detailing</h1>
+       <h1 className="text-6xl md:text-7xl font-bold mb-4">Premium Car Detailing</h1>
        <p className="text-lg md:text-xl opacity-90"></p>
         <p>Binnen- en buiten schoonmaak</p>
       </section>
@@ -39,17 +43,17 @@ export default function Home() {
   <h2 className="text-3xl font-bold mb-8">Voor & Na Resultaten</h2>
 
   <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-    <img
-      src={slides[slide].before}
-      className="w-full h-[220px] object-cover rounded-2xl shadow-xl"
-      alt="Before"
-    />
+      <img
+     src={slides[slide].before}
+     className="w-[220px] h-[140px] object-cover rounded-xl shadow-lg mx-auto"
+     alt="Before"
+     />
 
     <img
-      src={slides[slide].after}
-      className="w-full h-[220px] object-cover rounded-2xl shadow-xl"
-      alt="After"
-    />
+     src={slides[slide].after}
+     className="w-[220px] h-[140px] object-cover rounded-xl shadow-lg mx-auto"
+     alt="After"
+     />
   </div>
 
   <div className="mt-6 flex justify-center gap-4">
