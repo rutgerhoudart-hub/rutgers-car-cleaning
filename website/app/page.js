@@ -21,7 +21,7 @@ export default function Home() {
         <div className="flex items-center gap-3">
          <img
           src="/logo-rutger.svg"
-          className="h-2 md:h-3 w-auto object-contain"
+          className="h-3 md:h-3 w-auto object-contain"
          alt="Rutger's Premium Car Cleaning logo"
          />
           <span className="font-bold">Rutger's Premium Car Cleaning</span>
@@ -45,13 +45,13 @@ export default function Home() {
   <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
       <img
      src={slides[slide].before}
-     className="w-[220px] h-[140px] object-cover rounded-xl shadow-lg mx-auto"
+     className="w-[200px] h-[140px] object-cover rounded-xl shadow-lg mx-auto"
      alt="Before"
      />
 
     <img
      src={slides[slide].after}
-     className="w-[220px] h-[140px] object-cover rounded-xl shadow-lg mx-auto"
+     className="w-[200px] h-[140px] object-cover rounded-xl shadow-lg mx-auto"
      alt="After"
      />
   </div>
