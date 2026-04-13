@@ -38,23 +38,15 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-      <section className="relative min-h-[85vh] w-full overflow-hidden flex items-center justify-center text-center">
-        <img
-          src="/hero-car.jpg"
-          className="absolute inset-0 w-full h-full object-cover"
-          alt="Luxury detailed car"
-        />
+      <section className="bg-[#0b2e59] py-32 text-center">
+       <h1 className="text-7xl font-bold">
+         Premium Car Detailing
+      </h1>
 
-        <div className="absolute inset-0 bg-[#0b2e59]/50"></div>
-
-        <div className="relative z-10 px-6 max-w-5xl">
-          <h1 className="text-7xl md:text-9xl font-bold mb-8">
-            Premium Car Detailing
-          </h1>
-
-          <p className="text-3xl md:text-4xl opacity-95">
-            Binnen- en buiten schoonmaak op topniveau
-          </p>
+      <p className="text-3xl mt-4">
+        Binnen- en buiten schoonmaak op topniveau
+      </p>
+    </section>
 
           <a href="https://wa.me/32498350160">
             <button className="mt-10 bg-[#5c9ea6] px-10 py-5 rounded-full text-2xl font-bold hover:scale-105 transition">
