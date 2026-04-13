@@ -46,15 +46,13 @@ export default function Home() {
       <p className="text-3xl mt-4">
         Binnen- en buiten schoonmaak op topniveau
       </p>
-    </section>
 
-          <a href="https://wa.me/32498350160">
-            <button className="mt-10 bg-[#5c9ea6] px-10 py-5 rounded-full text-2xl font-bold hover:scale-105 transition">
-              Boek Nu
-            </button>
-          </a>
-        </div>
-      </section>
+      <a href="https://wa.me/32498350160">
+        <button className="mt-10 bg-[#5c9ea6] px-10 py-5 rounded-full text-2xl font-bold hover:scale-105 transition">
+          Boek Nu
+        </button>
+      </a>
+    </section>
 
       {/* VOOR & NA */}
       <section className="text-center py-24 px-6">
