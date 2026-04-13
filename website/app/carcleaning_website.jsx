@@ -12,10 +12,12 @@ export default function CarCleaningWebsite() {
   return (
     <div className="bg-black text-white min-h-screen">
 
-      {/* TEST BLOCK */}
-      <div className="bg-red-500 text-white p-10 text-center">
-        TEST
-      </div>
+      const colors = {
+     primary: "#0b2e59",
+     secondary: "#3aa0c8",
+    accent: "#5c9ea6",
+    light: "#c9c1ad"
+    };
 
       {/* WEBSITE */}
       <Hero />
