@@ -3,92 +3,80 @@
 import Link from "next/link";
 import { useState } from "react";
 
+
 export default function Home() {
+
   const slides = [
     { before: "/before1.jpg", after: "/after1.jpg" },
     { before: "/before2.jpg", after: "/after2.jpg" },
     { before: "/before3.jpg", after: "/after3.jpg" },
-    { before: "/before4.jpg", after: "/after4.jpg" },
   ];
 
   const [slide, setSlide] = useState(0);
 
   return (
-    <div className="min-h-screen bg-[#0b2e59] text-white text-xl">
+    <div className="min-h-screen bg-gradient-to-b from-[#081f3a] to-[#0b2e59] text-white">
 
       {/* HEADER */}
-      <header className="flex justify-between items-center px-4 md:px-8 py-6 border-b border-white/10 backdrop-blur-md sticky top-0 z-50 bg-[#0b2e59]/95">
+      <header className="flex justify-between items-center px-6 py-5 sticky top-0 z-50 backdrop-blur-xl bg-white/5 border-b border-white/10">
         <div className="flex items-center gap-4">
-          <img
-            src="/logo-rutger.svg"
-            className="h-12 md:h-16 w-auto object-contain"
-            alt="Rutger's Premium Car Cleaning logo"
-          />
-
-          <span className="font-bold text-2xl md:text-3xl">
+          <img src="/logo-rutger.svg" className="h-12 md:h-14" />
+          <span className="font-bold text-xl md:text-2xl tracking-wide">
             Rutger's Premium Car Cleaning
           </span>
         </div>
 
         <a href="https://wa.me/32498350160">
-          <button className="bg-[#5c9ea6] px-6 py-4 rounded-full text-xl font-bold hover:scale-105 transition">
+          <button className="bg-[#5c9ea6] px-6 py-3 rounded-full font-bold text-lg hover:scale-105 transition duration-300 shadow-lg">
             WhatsApp
           </button>
         </a>
       </header>
 
       {/* HERO */}
-      <section className="bg-[#0b2e59] py-32 text-center">
-       <h1 className="text-7xl font-bold">
-         Premium Car Detailing
-      </h1>
+      <section className="relative text-center py-32 px-6 overflow-hidden">
 
-      <p className="text-3xl mt-4">
-        Binnen- en buiten schoonmaak op topniveau
-      </p>
+        <div className="absolute inset-0 bg-black/40"></div>
 
-      <a href="https://wa.me/32498350160">
-        <button className="mt-10 bg-[#5c9ea6] px-10 py-5 rounded-full text-2xl font-bold hover:scale-105 transition">
-          Boek Nu
-        </button>
-      </a>
-    </section>
+        <div className="relative z-10">
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
+            Premium Car Detailing
+          </h1>
+
+          <p className="text-2xl opacity-90 max-w-2xl mx-auto">
+            Binnen- en buiten schoonmaak op topniveau
+          </p>
+
+          <a href="https://wa.me/32498350160">
+            <button className="mt-10 bg-[#5c9ea6] px-10 py-5 rounded-full text-xl font-bold hover:scale-105 transition duration-300 shadow-xl">
+              Boek Nu
+            </button>
+          </a>
+        </div>
+      </section>
 
       {/* VOOR & NA */}
-      <section className="text-center py-24 px-6">
-        <h2 className="text-6xl font-bold mb-12">
+      <section className="py-24 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold mb-12">
           Voor & Na Resultaten
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-          <img
-            src={slides[slide].before}
-            className="w-full h-[350px] object-cover rounded-3xl shadow-2xl"
-            alt="Before"
-          />
-
-          <img
-            src={slides[slide].after}
-            className="w-full h-[350px] object-cover rounded-3xl shadow-2xl"
-            alt="After"
-          />
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto px-6">
+          <img src={slides[slide].before} className="rounded-2xl h-[260px] object-cover shadow-2xl" />
+          <img src={slides[slide].after} className="rounded-2xl h-[260px] object-cover shadow-2xl" />
         </div>
 
-        <div className="mt-10 flex justify-center gap-6">
+        <div className="mt-8 flex justify-center gap-4">
           <button
-            onClick={() =>
-              setSlide((slide - 1 + slides.length) % slides.length)
-            }
-            className="bg-gray-700 px-8 py-4 rounded-full text-xl hover:bg-gray-600 transition"
+            onClick={() => setSlide((slide - 1 + slides.length) % slides.length)}
+            className="bg-gray-700 px-6 py-3 rounded-full hover:bg-gray-600 transition"
           >
             Vorige
           </button>
 
           <button
-            onClick={() =>
-              setSlide((slide + 1) % slides.length)
-            }
-            className="bg-gray-700 px-8 py-4 rounded-full text-xl hover:bg-gray-600 transition"
+            onClick={() => setSlide((slide + 1) % slides.length)}
+            className="bg-gray-700 px-6 py-3 rounded-full hover:bg-gray-600 transition"
           >
             Volgende
           </button>
@@ -96,137 +84,79 @@ export default function Home() {
       </section>
 
       {/* DIENSTEN */}
-      <section className="grid md:grid-cols-2 gap-10 p-10 max-w-6xl mx-auto">
-        <Link href="/interieur">
-          <div className="bg-white text-black p-12 rounded-3xl shadow-xl hover:scale-[1.02] transition cursor-pointer">
-            <h2 className="text-4xl font-bold">Interieur</h2>
-            <p className="mt-4 text-2xl opacity-80">
-              Dieptereiniging & bescherming
-            </p>
-          </div>
-        </Link>
-
-        <Link href="/polieren">
-          <div className="bg-white text-black p-12 rounded-3xl shadow-xl hover:scale-[1.02] transition cursor-pointer">
-            <h2 className="text-4xl font-bold">Polieren</h2>
-            <p className="mt-4 text-2xl opacity-80">
-              Light & heavy polish
-            </p>
-          </div>
-        </Link>
-
-        <Link href="/exterieur">
-          <div className="bg-white text-black p-12 rounded-3xl shadow-xl hover:scale-[1.02] transition cursor-pointer">
-            <h2 className="text-4xl font-bold">Exterieur</h2>
-            <p className="mt-4 text-2xl opacity-80">
-              Premium handwas
-            </p>
-          </div>
-        </Link>
-
-        <Link href="/coating">
-          <div className="bg-white text-black p-12 rounded-3xl shadow-xl border-2 border-[#5c9ea6] hover:scale-[1.02] transition cursor-pointer">
-            <p className="text-lg mb-3 font-bold text-[#5c9ea6]">
-              MEEST GEKOZEN
-            </p>
-
-            <h2 className="text-4xl font-bold">Coating</h2>
-
-            <p className="mt-4 text-2xl opacity-80">
-              Nanolex bescherming
-            </p>
-          </div>
-        </Link>
-      </section>
-
-      {/* REVIEWS */}
-      <section className="py-24 px-6 text-center">
-        <h2 className="text-6xl font-bold mb-10">
-          Wat klanten zeggen
+      <section className="py-24 bg-[#f8f8f8] text-black">
+        <h2 className="text-5xl text-center font-bold mb-16">
+          Onze Diensten
         </h2>
 
-        <div className="max-w-4xl mx-auto bg-white text-black p-12 rounded-3xl shadow-xl">
-          <p className="text-5xl mb-6">⭐⭐⭐⭐⭐</p>
+        <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto px-6">
 
-          <p className="text-2xl">
-            Mijn wagen zag eruit als nieuw. Top service en super professioneel.
-          </p>
+          {[
+            { title: "Interieur", link: "/interieur" },
+            { title: "Polieren", link: "/polieren" },
+            { title: "Exterieur", link: "/exterieur" },
+            { title: "Coating", link: "/coating", highlight: true }
+          ].map((item, i) => (
+            <Link key={i} href={item.link}>
+              <div className={`p-12 rounded-3xl shadow-xl cursor-pointer transition hover:scale-[1.03] ${
+                item.highlight ? "border-2 border-[#5c9ea6]" : "bg-white"
+              }`}>
+                {item.highlight && (
+                  <p className="text-sm text-[#5c9ea6] font-bold mb-2">
+                    MEEST GEKOZEN
+                  </p>
+                )}
+                <h3 className="text-3xl font-bold">{item.title}</h3>
+              </div>
+            </Link>
+          ))}
+
         </div>
       </section>
 
-      {/* WEBSHOP */}
-      <section className="p-10">
-        <h2 className="text-5xl mb-10 text-center font-bold">
-          Webshop
+      {/* TRUST */}
+      <section className="py-24 text-center">
+        <h2 className="text-5xl font-bold mb-8">
+          Waarom kiezen voor ons?
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div className="bg-white text-black p-10 rounded-3xl shadow-xl">
-            <h3 className="text-3xl font-bold">Auto Shampoo</h3>
-            <p className="text-2xl mt-3">€15</p>
-          </div>
+        <p className="max-w-2xl mx-auto text-lg opacity-80 mb-8">
+          Wij leveren hoogwaardige detailing met oog voor detail. 
+          Jouw wagen krijgt de behandeling die hij verdient.
+        </p>
 
-          <div className="bg-white text-black p-10 rounded-3xl shadow-xl">
-            <h3 className="text-3xl font-bold">Wax</h3>
-            <p className="text-2xl mt-3">€25</p>
-          </div>
-
-          <div className="bg-white text-black p-10 rounded-3xl shadow-xl">
-            <h3 className="text-3xl font-bold">Microvezel doek</h3>
-            <p className="text-2xl mt-3">€10</p>
-          </div>
-        </div>
+        <p className="text-3xl">⭐⭐⭐⭐⭐</p>
       </section>
 
-      {/* FORMULIER */}
-      <section className="p-10 bg-[#c9c1ad] text-black">
-        <h2 className="text-5xl font-bold mb-10 text-center">
+      {/* FORM */}
+      <section className="py-24 bg-[#c9c1ad] text-black">
+        <h2 className="text-5xl text-center font-bold mb-12">
           Vraag een offerte aan
         </h2>
 
         <form
           action="https://formsubmit.co/rutgerscarcleaning@outlook.be"
           method="POST"
-          className="max-w-2xl mx-auto grid gap-6"
+          className="max-w-xl mx-auto grid gap-6"
         >
-          <input
-            type="text"
-            name="naam"
-            placeholder="Naam"
-            required
-            className="p-6 rounded-xl text-2xl"
-          />
+          <input type="text" placeholder="Naam" required className="p-5 rounded-xl text-lg" />
+          <input type="email" placeholder="Email" required className="p-5 rounded-xl text-lg" />
+          <textarea placeholder="Wat wil je laten doen?" className="p-5 rounded-xl text-lg" />
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-            className="p-6 rounded-xl text-2xl"
-          />
-
-          <textarea
-            name="bericht"
-            placeholder="Wat wil je laten doen?"
-            className="p-6 rounded-xl text-2xl"
-          />
-
-          <button
-            type="submit"
-            className="bg-[#0b2e59] text-white py-5 rounded-xl text-2xl font-bold hover:bg-[#092447] transition"
-          >
+          <button className="bg-[#0b2e59] text-white py-4 rounded-xl text-lg font-bold hover:bg-[#092447] transition">
             Verstuur aanvraag
           </button>
         </form>
       </section>
 
-      {/* FLOATING WHATSAPP */}
+      {/* FLOATING BUTTON */}
       <a
         href="https://wa.me/32498350160"
-        className="fixed bottom-6 right-6 bg-[#25D366] px-8 py-5 rounded-full shadow-2xl z-50 text-xl font-bold"
+        className="fixed bottom-6 right-6 bg-[#25D366] px-6 py-4 rounded-full shadow-2xl text-lg font-bold hover:scale-110 transition"
       >
         WhatsApp
       </a>
+
     </div>
   );
 }
