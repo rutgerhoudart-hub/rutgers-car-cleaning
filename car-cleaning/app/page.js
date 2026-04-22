@@ -14,144 +14,146 @@ export default function Home() {
   const [slide, setSlide] = useState(0);
 
   return (
-    <div className="bg-[#0b2e59] text-white">
-      {/* CONTAINER */}
-      <div className="max-w-[1400px] mx-auto">
-        {/* HEADER */}
-        <header className="flex justify-between items-center px-4 md:px-8 py-4 md:py-6">
-          <div className="flex items-center gap-3">
-            <img
-              src="/logo-rutger.svg"
-              className="h-10 md:h-14 w-auto"
-              alt="logo"
-            />
-            <span className="text-lg md:text-2xl font-bold">
-              Rutger's Premium Car Cleaning
-            </span>
-          </div>
+    <div className="min-h-screen bg-[#0b2e59] text-white">
 
-          <a href="https://wa.me/32498350160">
-            <button className="bg-[#5c9ea6] px-4 md:px-6 py-2 md:py-3 rounded-full text-sm md:text-lg font-bold">
-              WhatsApp
-            </button>
-          </a>
-        </header>
+      {/* HEADER */}
+      <header className="flex justify-between items-center px-6 py-5 bg-[#0b2e59] sticky top-0 z-50">
+        <div className="flex items-center gap-4">
+          <img
+            src="/logo-rutger.svg"
+            className="h-16 md:h-20 w-auto"
+            alt="logo"
+          />
+          <span className="text-2xl md:text-3xl font-bold">
+            Rutger's Premium Car Cleaning
+          </span>
+        </div>
 
-        {/* HERO */}
-        <section className="text-center py-20 md:py-32 px-4">
-          <h1 className="text-4xl md:text-7xl font-bold leading-tight">
+        <a href="https://wa.me/32498350160">
+          <button className="bg-[#5c9ea6] px-6 py-3 rounded-full text-xl font-bold hover:scale-105 transition">
+            WhatsApp
+          </button>
+        </a>
+      </header>
+
+      {/* HERO */}
+      <section className="relative h-[80vh] flex items-center justify-center text-center">
+        <img
+          src="/hero-car.jpg"
+          className="absolute w-full h-full object-cover opacity-40"
+          alt="hero"
+        />
+
+        <div className="relative z-10">
+          <h1 className="text-6xl md:text-8xl font-bold">
             Premium Car Detailing
           </h1>
 
-          <p className="text-lg md:text-2xl mt-4 opacity-90">
-            Binnen- en buiten schoonmaak op topniveau
+          <p className="text-2xl mt-4">
+            Binnen & buiten tot showroomstaat
           </p>
 
-          <button className="mt-8 md:mt-10 bg-[#5c9ea6] px-6 md:px-10 py-3 md:py-5 rounded-full text-lg md:text-xl font-bold">
-            Boek Nu
-          </button>
-        </section>
-
-        {/* VOOR NA */}
-        <section className="py-16 md:py-24 px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-10">
-            Voor & Na Resultaten
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <img
-              src={slides[slide].before}
-              className="w-full h-[200px] md:h-[350px] object-cover rounded-2xl"
-              alt="Before"
-            />
-
-            <img
-              src={slides[slide].after}
-              className="w-full h-[200px] md:h-[350px] object-cover rounded-2xl"
-              alt="After"
-            />
-          </div>
-
-          <div className="mt-6 flex justify-center gap-4">
-            <button
-              onClick={() =>
-                setSlide((slide - 1 + slides.length) % slides.length)
-              }
-              className="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600"
-            >
-              Vorige
+          <a href="https://wa.me/32498350160">
+            <button className="mt-8 bg-[#5c9ea6] px-8 py-4 rounded-full text-2xl font-bold hover:scale-105 transition">
+              Boek Nu
             </button>
+          </a>
+        </div>
+      </section>
 
-            <button
-              onClick={() => setSlide((slide + 1) % slides.length)}
-              className="bg-gray-700 px-4 py-2 rounded hover:bg-gray-600"
-            >
-              Volgende
-            </button>
-          </div>
-        </section>
+      {/* VOOR NA */}
+      <section className="py-20 text-center">
+        <h2 className="text-5xl font-bold mb-10">
+          Voor & Na Resultaten
+        </h2>
 
-        {/* DIENSTEN */}
-        <section className="bg-white text-black py-16 md:py-24 px-4">
-          <h2 className="text-3xl md:text-5xl text-center font-bold mb-12">
-            Onze Diensten
-          </h2>
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <img
+            src={slides[slide].before}
+            className="w-full h-[300px] object-cover rounded-2xl"
+          />
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {["Interieur", "Polieren", "Exterieur", "Coating"].map(
-              (item, i) => (
-                <div
-                  key={i}
-                  className="p-8 md:p-12 bg-white rounded-2xl shadow-lg"
-                >
-                  <h3 className="text-2xl md:text-3xl font-bold">{item}</h3>
-                </div>
-              )
-            )}
-          </div>
-        </section>
+          <img
+            src={slides[slide].after}
+            className="w-full h-[300px] object-cover rounded-2xl"
+          />
+        </div>
 
-        {/* FORM */}
-        <section className="py-16 md:py-24 px-4 bg-[#c9c1ad] text-black">
-          <h2 className="text-3xl md:text-5xl text-center font-bold mb-10">
-            Vraag een offerte aan
-          </h2>
-
-          <form
-            action="https://formsubmit.co/rutgerscarcleaning@outlook.be"
-            method="POST"
-            className="max-w-xl mx-auto grid gap-4"
+        <div className="mt-6 flex justify-center gap-4">
+          <button
+            onClick={() =>
+              setSlide((slide - 1 + slides.length) % slides.length)
+            }
+            className="bg-gray-700 px-6 py-3 rounded-full"
           >
-            <input
-              type="text"
-              placeholder="Naam"
-              required
-              className="p-4 md:p-5 rounded text-base md:text-lg"
-            />
+            Vorige
+          </button>
 
-            <input
-              type="email"
-              placeholder="Email"
-              required
-              className="p-4 md:p-5 rounded text-base md:text-lg"
-            />
+          <button
+            onClick={() =>
+              setSlide((slide + 1) % slides.length)
+            }
+            className="bg-gray-700 px-6 py-3 rounded-full"
+          >
+            Volgende
+          </button>
+        </div>
+      </section>
 
-            <textarea
-              placeholder="Wat wil je laten doen?"
-              className="p-4 md:p-5 rounded text-base md:text-lg"
-            />
+      {/* DIENSTEN */}
+      <section className="grid md:grid-cols-2 gap-8 p-10 max-w-6xl mx-auto">
+        {["interieur", "polieren", "exterieur", "coating"].map((item) => (
+          <Link key={item} href={`/${item}`}>
+            <div className="bg-white text-black p-10 rounded-3xl text-center hover:scale-105 transition cursor-pointer">
+              <h2 className="text-3xl font-bold capitalize">{item}</h2>
+            </div>
+          </Link>
+        ))}
+      </section>
 
-            <button className="bg-[#0b2e59] text-white py-3 md:py-4 rounded text-lg font-bold hover:bg-[#0a1f3a]">
-              Verstuur aanvraag
-            </button>
-          </form>
-        </section>
-      </div>
+      {/* WEBSHOP */}
+      <section className="p-10">
+        <h2 className="text-4xl text-center mb-8 font-bold">Webshop</h2>
 
-      {/* FLOAT BUTTON */}
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {[
+            { name: "Auto Shampoo", price: "€15" },
+            { name: "Wax", price: "€25" },
+            { name: "Microvezel doek", price: "€10" },
+          ].map((p, i) => (
+            <div key={i} className="bg-white text-black p-8 rounded-3xl text-center">
+              <h3 className="text-2xl font-bold">{p.name}</h3>
+              <p className="text-xl mt-2">{p.price}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section className="p-10 bg-[#c9c1ad] text-black">
+        <h2 className="text-4xl text-center mb-8 font-bold">
+          Vraag een offerte aan
+        </h2>
+
+        <form
+          action="https://formsubmit.co/rutgerscarcleaning@outlook.be"
+          method="POST"
+          className="max-w-xl mx-auto grid gap-4"
+        >
+          <input type="text" name="naam" placeholder="Naam" className="p-4 rounded" required />
+          <input type="email" name="email" placeholder="Email" className="p-4 rounded" required />
+          <textarea name="bericht" placeholder="Wat wil je laten doen?" className="p-4 rounded" />
+
+          <button className="bg-[#0b2e59] text-white py-4 rounded text-xl">
+            Verstuur
+          </button>
+        </form>
+      </section>
+
+      {/* FLOATING BUTTON */}
       <a
         href="https://wa.me/32498350160"
-        className="fixed bottom-5 right-5 bg-[#25D366] text-white px-5 py-3 rounded-full text-sm md:text-lg font-bold shadow-xl hover:bg-[#1da851]"
+        className="fixed bottom-6 right-6 bg-[#25D366] px-6 py-4 rounded-full text-xl font-bold shadow-lg"
       >
         WhatsApp
       </a>
